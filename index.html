@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Ball Blazter</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body{
+      height: 100%;
+      margin: 0;
+      background:#111;
+      color:#eee;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+      overflow: hidden; /* ✅ canvas-only UI, so we can safely prevent scroll */
+    }
+
+    body{
+      display:flex;
+      justify-content:center;
+      align-items:stretch;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right)
+               env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+
+    .wrap{
+      width: min(100vw, 520px);
+      min-height: 100vh;
+      min-height: 100svh;
+      min-height: 100dvh;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      padding: 10px;
+    }
+
+    @supports (-webkit-touch-callout: none) {
+      .wrap { min-height: -webkit-fill-available; }
+    }
+
+    canvas{
+      width: 100%;
+      height: auto;
+      aspect-ratio: 420 / 720;     /* keep correct shape */
+      max-height: 100%;
+      background:#0b1220;
+      border-radius:14px;
+      touch-action:none;
+      display:block;
+      outline:none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <canvas id="c" width="420" height="720" tabindex="0" aria-label="Ball Blazter game canvas"></canvas>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
