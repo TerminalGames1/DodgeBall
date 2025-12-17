@@ -4,7 +4,7 @@ const ctx = canvas.getContext("2d");
 const W = canvas.width;
 const H = canvas.height;
 
-const LANES = 3;
+const LANES = 4;
 
 const BASE_SPEED_PX = 280;
 const SPEED_INCREMENT = 0.10;
